@@ -1,0 +1,9 @@
+name: codealign
+dependencies:
+  - python=3.11
+  - tree_sitter=0.21.3
+  - pip
+  - pip:
+    - z3-solver
+    - tree-sitter-python==0.21.0
+    - tree-sitter-c==0.21.4
