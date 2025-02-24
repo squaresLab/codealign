@@ -1,6 +1,6 @@
 # Introduction
 
-Codealign is a tool for evaluating neural decopmilers that computes equivalence between two input functions at the instruction level.
+Codealign is a tool for evaluating neural decompilers that computes equivalence between two input functions at the instruction level.
 The intended use case is comparing the predictions of a neural decompiler with a reference correct answer like the original source code.
 
 This work was introduced in [Fast, Fine-Grained Equivalence Checking for Neural Decompilers](https://arxiv.org/abs/2501.04811)
