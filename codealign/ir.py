@@ -329,7 +329,7 @@ class BasicBlock:
 # Function
 #
 class Function:
-    def __init__(self, name: str, basic_blocks: List[BasicBlock], parameters: List[Parameter]):
+    def __init__(self, name: str, basic_blocks: List[BasicBlock], parameters: List[Parameter], node: Node):
         """Initialize a Function object.
 
         Precondition: The first element of basic_blocks is the functions' entry block.
@@ -340,6 +340,7 @@ class Function:
         self.entry_block = basic_blocks[0]
         self.basic_blocks = basic_blocks
         self.parameters = parameters
+        self.node = node
 
     def __iter__(self) -> Iterator[BasicBlock]:
         """Iterate over the functions' basic blocks in an arbitrary order except the first block is the entry block.

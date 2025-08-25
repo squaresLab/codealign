@@ -1620,7 +1620,7 @@ def convert_function(definition: Node) -> Function:
     basic_blocks = [b[0] for b in function_body] # Items in position b[1] are block succession assignments, which aren't relevant after this point.
     basic_blocks = finish_control_flow_proxies(basic_blocks)
     clean_up_empty_blocks(basic_blocks)
-    return Function(function_name, basic_blocks, parameters)
+    return Function(function_name, basic_blocks, parameters, definition)
 
 
 def parse(code: bytes) -> List[Function]:

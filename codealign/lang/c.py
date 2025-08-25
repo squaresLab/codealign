@@ -4,7 +4,6 @@
 from abc import ABC
 from typing import Tuple, Set
 import itertools
-from pathlib import Path
 
 import tree_sitter_c
 from tree_sitter import Language, Parser, Node
@@ -135,7 +134,7 @@ def print_immediate_children(root: Node):
         print(root.field_name_for_child(i))
 
 
-def check_expression_leaf(expression: Node, variable_registry: VariableRegistry) -> Optional[Node]:
+def check_expression_leaf(expression: Node, variable_registry: VariableRegistry) -> Optional[Constant]:
     if expression.type == "identifier":
         return variable_registry.check_variable(expression.text.decode("utf8"), declared=False)
     if expression.type == "number_literal":
@@ -1163,7 +1162,7 @@ def function_ast2varform(definition: Node):
     basic_blocks = [b[0] for b in blocks_with_metadata]
     clean_up_empty_blocks(basic_blocks)
 
-    func = Function(function_name, basic_blocks, parameters)
+    func = Function(function_name, basic_blocks, parameters, definition)
     remove_unreachable_blocks(func)
     return func
 
