@@ -5,6 +5,8 @@ The intended use case is comparing the predictions of a neural decompiler with a
 
 This work was introduced in [Fast, Fine-Grained Equivalence Checking for Neural Decompilers](https://arxiv.org/abs/2501.04811)
 
+For the artifacts used to evaluate Codealign, see the [companion evaluation repository](https://github.com/squaresLab/codealigneval).
+
 # Installation
 
 Codealign is a python package.
